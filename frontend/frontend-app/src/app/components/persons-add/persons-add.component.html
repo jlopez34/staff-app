@@ -1,0 +1,50 @@
+<div class="col-md-6 user-container">
+    <h2 class="text-center">Inserir Informacao Pessoa</h2>
+    <form [formGroup]="addForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label for="nome">Nome:</label>
+            <input formControlName="nome" placeholder="Nome" name="nome" class="form-control" id="nome">
+        </div>
+
+        <div class="form-group">
+            <label for="sexo">sexo:</label>
+            <select formControlName="sexo" class="form-control" id="sexo" name="sexo">
+                <option value="" disabled selected>--Escolher Sexo--</option>
+                <option>Masculino</option>
+                <option>Femenino</option>
+            </select>
+
+        </div>
+        <input [matDatepicker]="myDatepicker">
+<mat-datepicker #myDatepicker></mat-datepicker>
+        <div class="form-group">
+            <label for="email">E-mail:</label>
+            <input formControlName="email" placeholder="E-mail" name="email" class="form-control" id="email">
+        </div>
+
+        <div class="form-group">
+            <label for="dataNacimento">Data Nacimento:</label>
+            <input formControlName="dataNacimento" placeholder="Data Nacimento" name="dataNacimento"
+                class="form-control" id="dataNacimento">
+        </div>
+
+        <div class="form-group">
+            <label for="naturalidade">Naturalidade:</label>
+            <input formControlName="naturalidade" placeholder="Naturalidade" name="naturalidade" class="form-control"
+                id="naturalidade">
+        </div>
+
+        <div class="form-group">
+            <label for="nacionalidade">Nacionalidade:</label>
+            <input formControlName="nacionalidade" placeholder="Nacionalidade" name="nacionalidade" class="form-control"
+                id="nacionalidade">
+        </div>
+
+        <div class="form-group">
+            <label for="cpf">CPF:</label>
+            <input formControlName="cpf" placeholder="CPF" name="cpf" class="form-control" id="cpf">
+        </div>
+
+        <button class="btn btn-success">Add</button>
+    </form>
+</div>
