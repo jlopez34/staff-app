@@ -38,8 +38,3 @@ docker-compose up
 - Docker Compose >= version 1.20
 - Maven 3.x.x
 - JDK 1.8+
-
-## Aviso Legal
-Meus repositórios de playground não se destinam a fornecer aplicativos completos,
-basicamente, são caixas de areia e projetos para animais de estimação para experimentar 
-diferentes tecnologias e técnicas.
