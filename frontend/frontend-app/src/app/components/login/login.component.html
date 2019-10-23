@@ -1,23 +1,33 @@
-
-<div class="row">
-
-  <div class="col-md-6 login-container">
-    <h2 style="margin: auto">Login </h2>
-    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-      <div class="form-group">
-        <label for="username">Usuario:</label>
-        <input type="text" class="form-control" formControlName="username" id="username" autocomplete="off">
-        <div class="error" *ngIf="loginForm.control['username'].hasError('required') && loginForm.control['username'].touched">Usuario é requerido</div>
+<div class="container h-100">
+  <div class="d-flex justify-content-center h-100">
+    <div class="user_card">
+      <div class="d-flex justify-content-center">
+        <div class="brand_logo_container">
+          <img src="https://cdn.freebiesupply.com/logos/large/2x/pinterest-circle-logo-png-transparent.png"
+            class="brand_logo" alt="Logo">
+        </div>
       </div>
-      <div class="form-group">
-        <label for="password">Senha:</label>
-        <input type="password" class="form-control" formControlName="password" id="password" autocomplete="off">
-        <div class="error" *ngIf="loginForm.control['password'].hasError('required') && loginForm.control['password'].touched">Senha é requerida</div>
+      <div class="d-flex justify-content-center form_container">
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+          <div class="input-group mb-3">
+            <div class="input-group-append">
+              <span class="input-group-text"><i class="fas fa-user"></i></span>
+            </div>
+            <input formControlName="username" type="text" name="" class="form-control input_user"
+              placeholder="username">
+          </div>
+          <div class="input-group mb-2">
+            <div class="input-group-append">
+              <span class="input-group-text"><i class="fas fa-key"></i></span>
+            </div>
+            <input formControlName="password" type="password" name="" class="form-control input_pass"
+              placeholder="password">
+          </div>
+          <div class="d-flex justify-content-center mt-3 login_container">
+            <button class="btn login_btn" [disabled]="loginForm.invalid">LogIn</button>
+          </div>
+        </form>
       </div>
-      <button class="btn btn-success" [disabled]="loginForm.invalid">LogIn</button>
-      <div *ngIf="invalidLogin" class="error">
-        <div>Dados Invalidos</div>
-      </div>
-    </form>
+    </div>
   </div>
 </div>

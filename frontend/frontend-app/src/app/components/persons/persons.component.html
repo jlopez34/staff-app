@@ -1,31 +1,38 @@
-<div class="col-md-6 user-container">
-    <h2 style="margin: auto"> </h2>
-    <button class="btn btn-danger" style="width:150px" (click)="addPerson()"><i class="far fa-newspaper"></i> Nova Pessoa</button>
+<div class="container">
+  <div class="row col-md-6 col-md-offset-2 custyle">
     <div *ngIf="persons !== undefined">
-    <table class="table table-striped">
-      <thead>
-      <tr>
-        <th class="hidden">Id</th>
-        <th>Nome</th>
-        <th>Sexo</th>
-        <th>E-mail</th>
-        <th>Data de Nacimento</th>
-        <th>Nacionalidade</th>
-        <th></th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr *ngFor="let person of persons">
-        <td class="hidden">{{person.id}}</td>
-        <td>{{person.nome}}</td>
-        <td>{{person.sexo}}</td>
-        <td>{{person.email}}</td>
-        <td>{{person.dataNacimento}}</td>
-        <td>{{person.nacionalidade}}</td>
-        <td><button class="btn btn-success" (click)="deletePerson(person)"><i class="fas fa-user-times"></i></button>
-          <button class="btn btn-success" (click)="editPerson(person)" style="margin-left: 50px;"><i class="fas fa-user-edit"></i></button></td>
-      </tr>
-      </tbody>
-    </table>
-</div>
+      <table class="table table-striped custab">
+        <thead>
+          <button class="btn btn-danger btn-xs pull-right" (click)="addPerson()"><i class="far fa-newspaper"></i> Nova
+            Pessoa</button>
+          <tr>
+            <th class="hidden">Id</th>
+            <th>Nome</th>
+            <th>Sexo</th>
+            <th>E-mail</th>
+            <th>Data de Nacimento</th>
+            <th>Nacionalidade</th>
+            <th class="text-center"></th>
+            <th class="text-center"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let person of persons">
+            <td class="hidden">{{person.id}}</td>
+            <td>{{person.nome}}</td>
+            <td>{{person.sexo}}</td>
+            <td>{{person.email}}</td>
+            <td>{{person.dataNacimento}}</td>
+            <td>{{person.nacionalidade}}</td>
+            <td class="text-center">
+              <button class='btn btn-info btn-xs linea' (click)="editPerson(person)"><span class="glyphicon glyphicon-edit"></span> Edit</button> 
+            </td>  
+            <td class="text-center">
+              <button class="btn btn-danger btn-xs linea" (click)="deletePerson(person)"><span class="glyphicon glyphicon-remove"></span> Del</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
+</div>
